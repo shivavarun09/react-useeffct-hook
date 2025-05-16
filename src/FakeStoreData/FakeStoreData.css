@@ -1,12 +1,11 @@
-/* General Reset & Background */
+/* Base Styles */
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #f2f4f7;
-  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
 }
 
-/* Sticky Input Section */
+/* Sticky Search & Filter Bar */
 .InputDiv {
   position: sticky;
   top: 0;
@@ -17,58 +16,52 @@ body {
   gap: 1rem;
   padding: 1.5rem;
   background-color: #ffffff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  border-radius: 0 0 12px 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid #eee;
 }
 
-/* Input, Select, and Button Styling */
+/* Input, Select & Button Styling */
+.InputDiv select,
 .InputDiv input[type="text"],
-.InputDiv select {
+.InputDiv button {
   padding: 10px 14px;
   font-size: 1rem;
-  border: 1px solid #ddd;
   border-radius: 8px;
-  width: 200px;
-  transition: border-color 0.3s;
-}
-
-.InputDiv input:focus,
-.InputDiv select:focus {
-  border-color: #007bff;
+  border: 1px solid #ccc;
   outline: none;
 }
 
+.InputDiv input[type="text"] {
+  width: 250px;
+}
+
 .InputDiv button {
-  padding: 10px 16px;
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 8px;
-  font-size: 1rem;
+  transition: background-color 0.3s;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .InputDiv button:hover {
   background-color: #0056b3;
 }
 
-/* Card Container Grid Layout */
+/* Card Grid Layout */
 .card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 1.5rem;
   padding: 2rem;
   width: 90%;
   margin: 0 auto;
 }
 
-/* Bootstrap Card Overrides */
+/* Individual Card Styles */
 .card {
-  border: none !important;
-  border-radius: 16px !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  transition: transform 0.2s ease;
   background-color: #fff;
 }
 
@@ -77,42 +70,49 @@ body {
 }
 
 .card-img-top {
-  max-height: 200px;
-  width: 70%;
+  height: 220px;
   object-fit: contain;
-  padding: 1rem;
-  background-color: #f9f9f9;
-  border-radius: 16px 16px 0 0;
+  padding: 2rem;
+  background-color: #f8f8f8;
+  border-radius: 12px 12px 0 0;
 }
 
 .card-body {
-  padding: 1rem 1.2rem;
+  padding: 1rem;
 }
 
 .card-title {
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 0.6rem;
-  color: #222;
+  color: #333;
+  margin-bottom: 0.5rem;
 }
 
 .card-text {
   font-size: 0.9rem;
+  color: #666;
+  max-height: 90px;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: #555;
 }
 
-/* Responsive Handling */
-@media (max-width: 600px) {
+/* No Results Message */
+h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  color: red;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
   .InputDiv {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .InputDiv input,
+
   .InputDiv select,
-  .InputDiv button {
+  .InputDiv button,.InputDiv input{
     width: 100%;
   }
 

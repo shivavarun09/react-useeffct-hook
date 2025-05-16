@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Card } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import "./FakeStoreData.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const FakeStoreData = () => {
   const [apidata, setapidata] = useState([]);
@@ -74,12 +75,14 @@ const FakeStoreData = () => {
 
       <div className="card-container">
         {filterdata.map((p) => (
-          <Card key={p.id} style={{ width: "100%" }}>
+          <Card key={p.id} style={{ width: "100%", position:"relative"}}>
+            <p style={{position:"absolute",top:"4px",right:"5px"}}>⭐{p.rating.rate}({p.rating.count})</p>
             <Card.Img variant="top" src={p.image} />
             <Card.Body>
               <Card.Title>{p.title}</Card.Title>
               <Card.Title>${p.price}</Card.Title>
               <Card.Text>{p.description}</Card.Text>
+              <Button >Add to Cart</Button>
             </Card.Body>
           </Card>
         ))}
