@@ -76,7 +76,7 @@ const FakeStoreData = () => {
       <div className="card-container">
         {filterdata.map((p) => (
           <Card key={p.id} style={{ width: "100%", position:"relative"}}>
-            <p style={{position:"absolute",top:"4px",right:"5px"}}>⭐{p.rating.rate}({p.rating.count})</p>
+            <p style={{position:"absolute",top:"5px",right:"5px"}}>⭐{p.rating.rate}({p.rating.count})</p>
             <Card.Img variant="top" src={p.image} />
             <Card.Body>
               <Card.Title>{p.title}</Card.Title>
