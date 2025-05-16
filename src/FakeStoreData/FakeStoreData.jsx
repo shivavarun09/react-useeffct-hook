@@ -82,7 +82,7 @@ const FakeStoreData = () => {
               <Card.Title>{p.title}</Card.Title>
               <Card.Title>${p.price}</Card.Title>
               <Card.Text>{p.description}</Card.Text>
-              <Button >Add to Cart</Button>
+              <Button variant="warning">Add to Cart</Button>
             </Card.Body>
           </Card>
         ))}
